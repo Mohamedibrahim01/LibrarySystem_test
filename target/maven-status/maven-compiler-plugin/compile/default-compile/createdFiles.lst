@@ -1,9 +1,0 @@
-com\mycompany\librarysystem_test\BookDecorator.class
-com\mycompany\librarysystem_test\LibraryDatabase.class
-com\mycompany\librarysystem_test\Student.class
-com\mycompany\librarysystem_test\Book.class
-com\mycompany\librarysystem_test\Observer.class
-com\mycompany\librarysystem_test\BookFactory.class
-com\mycompany\librarysystem_test\LibrarySystem_test.class
-com\mycompany\librarysystem_test\Builder.class
-com\mycompany\librarysystem_test\RareBookDecorator.class

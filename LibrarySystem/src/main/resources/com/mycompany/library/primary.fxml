@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane style="-fx-background-color: #393E46;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.library.primaryController">
+   
+   <left>
+      <VBox prefWidth="280.0" spacing="20.0" style="-fx-background-color: #222831;">
+         <padding>
+            <Insets bottom="30.0" left="25.0" right="25.0" top="40.0" />
+         </padding>
+         <effect>
+            <DropShadow radius="10.0" color="#00000066" />
+         </effect>
+         <children>
+            <Label text="📚 LibraryOS" textFill="#00ADB5">
+               <font>
+                  <Font name="Segoe UI Bold" size="24.0" />
+               </font>
+            </Label>
+            <Separator opacity="0.1" />
+            
+            <VBox spacing="10.0">
+               <Label text="CREATE NEW ITEM" textFill="#EEEEEE">
+                  <font>
+                     <Font name="System Bold" size="11.0" />
+                  </font>
+               </Label>
+               <TextField fx:id="txtTitle" promptText="📖 Book Title..." style="-fx-background-color: #393E46; -fx-text-fill: #EEEEEE; -fx-background-radius: 8; -fx-padding: 10;" />
+               
+               <ComboBox fx:id="cmbType" maxWidth="Infinity" promptText="Select Type" 
+                         style="-fx-background-color: #393E46; -fx-mark-color: #00ADB5; -fx-background-radius: 8; -fx-padding: 5; -fx-text-base-color: white; -fx-prompt-text-fill: #aaaaaa;" />                
+               
+               <CheckBox fx:id="chkGoldCover" text="✨ Gold Edition" textFill="#EEEEEE" />
+               
+               <Button fx:id="btnAdd" maxWidth="Infinity" onAction="#handleAddAction" style="-fx-background-color: #00ADB5; -fx-text-fill: #EEEEEE; -fx-font-weight: bold; -fx-background-radius: 8; -fx-cursor: hand;" text="Add Item">
+                  <padding>
+                     <Insets bottom="12.0" top="12.0" />
+                  </padding>
+               </Button>
+            </VBox>
+
+            <Separator opacity="0.1">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Separator>
+
+            <VBox spacing="10.0">
+               <Label text="LOAN SYSTEM" textFill="#EEEEEE">
+                  <font>
+                     <Font name="System Bold" size="11.0" />
+                  </font>
+               </Label>
+               
+               <ComboBox fx:id="cmbBorrowBook" maxWidth="Infinity" promptText="Select Book..." 
+                         style="-fx-background-color: #393E46; -fx-mark-color: #00ADB5; -fx-background-radius: 8; -fx-padding: 5; -fx-text-base-color: white; -fx-prompt-text-fill: #aaaaaa;" />
+
+               <TextField fx:id="txtUser" promptText="👤 Member Name..." 
+                          style="-fx-background-color: #393E46; -fx-text-fill: #EEEEEE; -fx-prompt-text-fill: #aaaaaa; -fx-background-radius: 8; -fx-padding: 10;" />
+
+               <DatePicker fx:id="dtDate" maxWidth="Infinity" promptText="📅 Return Date" editable="false"
+            style="-fx-background-color: #393E46; -fx-control-inner-background: #393E46; -fx-text-base-color: white; -fx-prompt-text-fill: #aaaaaa;" />
+               <Button fx:id="btnBorrow" maxWidth="Infinity" onAction="#handleBorrowAction" style="-fx-background-color: #00ADB5; -fx-text-fill: #EEEEEE; -fx-font-weight: bold; -fx-background-radius: 8; -fx-cursor: hand;" text="Process Loan">
+                  <padding>
+                     <Insets bottom="12.0" top="12.0" />
+                  </padding>
+               </Button>
+            </VBox>
+         </children>
+      </VBox>
+   </left>
+
+   <center>
+      <VBox spacing="25.0" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="30.0" left="40.0" right="40.0" top="40.0" />
+         </padding>
+         <children>
+           <Label text="Dashboard Overview" textFill="#EEEEEE">
+               <font>
+                  <Font name="Segoe UI Bold" size="28.0" />
+               </font>
+            </Label>
+
+            <HBox spacing="15.0">
+               <children>
+                  <VBox alignment="CENTER" spacing="5.0" style="-fx-background-color: #2D4059; -fx-background-radius: 10; -fx-padding: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 3);" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="TOTAL ITEMS" textFill="#AAB7B8">
+                           <font><Font name="System Bold" size="12.0" /></font>
+                        </Label>
+                        <Label fx:id="lblTotal" text="0" textFill="WHITE">
+                           <font><Font name="System Bold" size="28.0" /></font>
+                        </Label>
+                     </children>
+                  </VBox>
+
+                  <VBox alignment="CENTER" spacing="5.0" style="-fx-background-color: #D35400; -fx-background-radius: 10; -fx-padding: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 3);" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="BORROWED" textFill="#FAD7A0">
+                           <font><Font name="System Bold" size="12.0" /></font>
+                        </Label>
+                        <Label fx:id="lblBorrowed" text="0" textFill="WHITE">
+                           <font><Font name="System Bold" size="28.0" /></font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  
+                  <VBox alignment="CENTER" spacing="5.0" style="-fx-background-color: #27AE60; -fx-background-radius: 10; -fx-padding: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 3);" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="AVAILABLE" textFill="#A9DFBF">
+                           <font><Font name="System Bold" size="12.0" /></font>
+                        </Label>
+                        <Label fx:id="lblAvailable" text="0" textFill="WHITE">
+                           <font><Font name="System Bold" size="28.0" /></font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox spacing="10.0">
+               <children>
+                  <TextField fx:id="txtSearch" promptText="🔍 Search inventory..." style="-fx-background-color: #222831; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 8;" HBox.hgrow="ALWAYS" />
+                  
+                  <ComboBox fx:id="cmbSearchStrategy" prefWidth="150.0" promptText="Search By" 
+                            style="-fx-background-color: #222831; -fx-mark-color: #00ADB5; -fx-background-radius: 8; -fx-text-base-color: white; -fx-prompt-text-fill: #cccccc;" />                
+               </children>
+            </HBox>
+
+            <VBox style="-fx-background-color: #222831; -fx-background-radius: 15;">
+               <children>
+                  <Label text="📦 Current Inventory" textFill="#00ADB5" style="-fx-padding: 15; -fx-font-weight: bold; -fx-font-size: 16;" />
+                  
+                  <ListView fx:id="listViewItems" prefHeight="250.0" style="-fx-background-color: transparent; -fx-control-inner-background: #222831; -fx-text-fill: #EEEEEE;" />
+               
+               </children>
+            </VBox>
+
+            <VBox style="-fx-background-color: #222831; -fx-background-radius: 15;" VBox.vgrow="ALWAYS">
+               <children>
+                  <Label text="🔔 Real-time Updates" textFill="#00ADB5" style="-fx-padding: 15; -fx-font-weight: bold; -fx-font-size: 16;" />
+                  <TextArea fx:id="txtNotifications" editable="false" prefHeight="150.0" style="-fx-background-color: transparent; -fx-control-inner-background: #222831; -fx-text-fill: #EEEEEE;" wrapText="true" />
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

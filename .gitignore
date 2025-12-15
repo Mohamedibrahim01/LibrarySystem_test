@@ -17,3 +17,4 @@ nbdist/
 *.zip
 *.tar.gz
 *.rar
+/LibrarySystem/target/
