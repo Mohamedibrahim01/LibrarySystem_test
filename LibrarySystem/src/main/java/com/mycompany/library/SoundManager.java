@@ -1,16 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+ 
 package com.mycompany.library;
 
 import javafx.scene.media.AudioClip;
 import java.net.URL;
-
-/**
- *
- * @author Hassan
- */
+ 
 public class SoundManager {
     private static final String SUCCESS_SOUND = "/com/mycompany/library/sounds/success.wav";
     private static final String ERROR_SOUND = "/com/mycompany/library/sounds/error.wav";

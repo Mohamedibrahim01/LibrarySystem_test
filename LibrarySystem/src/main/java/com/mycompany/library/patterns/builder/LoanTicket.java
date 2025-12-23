@@ -1,13 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.mycompany.library.patterns.builder;
 
-/**
- *
- * @author Hassan
- */
+
 public class LoanTicket {
     private String userName;
     private String bookTitle;
@@ -27,7 +21,7 @@ public class LoanTicket {
         private String date;
         private boolean isPremium;
 
-        public Builder(String userName, String bookTitle) { // الحقول الإجبارية
+        public Builder(String userName, String bookTitle) { 
             this.userName = userName;
             this.bookTitle = bookTitle;
         }

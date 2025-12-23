@@ -75,6 +75,13 @@
 
                <DatePicker fx:id="dtDate" maxWidth="Infinity" promptText="📅 Return Date" editable="false"
             style="-fx-background-color: #393E46; -fx-control-inner-background: #393E46; -fx-text-base-color: white; -fx-prompt-text-fill: #aaaaaa;" />
+               
+               <CheckBox fx:id="chkPremium" text="⭐ Premium Ticket" textFill="#FFD700">
+                   <font>
+                       <Font name="System Bold" size="12.0"/>
+                   </font>
+               </CheckBox>
+
                <Button fx:id="btnBorrow" maxWidth="Infinity" onAction="#handleBorrowAction" style="-fx-background-color: #00ADB5; -fx-text-fill: #EEEEEE; -fx-font-weight: bold; -fx-background-radius: 8; -fx-cursor: hand;" text="Process Loan">
                   <padding>
                      <Insets bottom="12.0" top="12.0" />
@@ -91,7 +98,7 @@
             <Insets bottom="30.0" left="40.0" right="40.0" top="40.0" />
          </padding>
          <children>
-           <Label text="Dashboard Overview" textFill="#EEEEEE">
+            <Label text="Dashboard Overview" textFill="#EEEEEE">
                <font>
                   <Font name="Segoe UI Bold" size="28.0" />
                </font>

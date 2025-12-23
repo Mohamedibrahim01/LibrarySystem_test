@@ -4,21 +4,17 @@ import java.io.IOException;
 import javafx.application.Application;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
 
-/**
- * JavaFX App
- */
+
 public class App extends Application {
 
    private static Scene scene;
 
     @Override
     public void start(Stage stage) throws IOException {
-        // هنا بنقوله يروح يحمل ملف التصميم اللي اسمه primary
+       
         scene = new Scene(loadFXML("primary"), 840, 680);
         stage.setTitle("LibraryOS Management System");
         stage.setScene(scene);

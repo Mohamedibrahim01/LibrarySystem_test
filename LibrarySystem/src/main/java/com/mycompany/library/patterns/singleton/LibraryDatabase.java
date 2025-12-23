@@ -1,22 +1,22 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.mycompany.library.patterns.singleton;
 import java.util.List;
 import java.util.stream.Collectors;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import com.mycompany.library.model.LibraryItem;
+import java.util.ArrayList;
+
+// 1-  LibraryDatabase db = LibraryDatabase().getInstacne();
 
 
-/**
- *
- * @author Hassan
- */
+
+
+// 2- // LibraryDatabase db = LibraryDatabase().getInstacne();
+
 public class LibraryDatabase {
    private static LibraryDatabase instance;
-    private ObservableList<LibraryItem> inventory;
+   private ObservableList<LibraryItem> inventory;
 
     private LibraryDatabase() {
         inventory = FXCollections.observableArrayList();
@@ -38,8 +38,16 @@ public class LibraryDatabase {
     }
 
     public List<LibraryItem> getAvailableItems() {
-        return inventory.stream()
-                .filter(LibraryItem::isAvailable)
-                .collect(Collectors.toList());
+//       return inventory.stream()
+//                .filter(LibraryItem::isAvailable)
+//                .collect(Collectors.toList());
+
+    List<LibraryItem> items = new ArrayList<>();
+        
+        for(LibraryItem item : inventory){
+            if(item.isAvailable())
+                items.add(item);
+        }
+        return items;
     }
 }
